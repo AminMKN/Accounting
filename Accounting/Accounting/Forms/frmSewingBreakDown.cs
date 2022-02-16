@@ -61,6 +61,7 @@ namespace Accounting.Forms
 
                 _sewingBreakDownRepository.Create(txtCode.Text, txtName.Text, txtColor.Text, txtSize.Text, txtQty.Text,
                     txtPercenBreakDown.Text, txtDescription.Text, txtDate.PersianDate.ToString());
+                _sewingBreakDownRepository.SaveChanges();
                 BindGrid();
                 Messages.Success();
             }
@@ -77,10 +78,12 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvSewingBreakDown.CurrentRow != null)
+                    {
                         _sewingBreakDownRepository.Delete((int)dgvSewingBreakDown.CurrentRow.Cells[0].Value);
-
-                    BindGrid();
-                    Messages.Success();
+                        _sewingBreakDownRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
                 }
             }
             catch
@@ -102,10 +105,14 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvSewingBreakDown.CurrentRow != null)
+                    {
                         _sewingBreakDownRepository.Edit((int)dgvSewingBreakDown.CurrentRow.Cells[0].Value, txtCode.Text, txtName.Text, txtColor.Text, txtSize.Text, txtQty.Text,
-                            txtPercenBreakDown.Text, txtDescription.Text, txtDate.PersianDate.ToString());
-                    BindGrid();
-                    Messages.Success();
+                           txtPercenBreakDown.Text, txtDescription.Text, txtDate.PersianDate.ToString());
+                        _sewingBreakDownRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
+
                 }
             }
             catch
@@ -133,7 +140,7 @@ namespace Accounting.Forms
             }
             catch
             {
-                // ignored
+                Messages.Failed();
             }
         }
 
@@ -157,7 +164,7 @@ namespace Accounting.Forms
             }
             catch
             {
-                // ignored
+                Messages.Failed();
             }
         }
     }

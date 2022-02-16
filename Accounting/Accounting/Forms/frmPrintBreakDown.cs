@@ -78,10 +78,12 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvPrintBreakDown.CurrentRow != null)
+                    {
                         _printBreakDownRepository.Delete((int)dgvPrintBreakDown.CurrentRow.Cells[0].Value);
-                    _printBreakDownRepository.SaveChanges();
-                    BindGrid();
-                    Messages.Success();
+                        _printBreakDownRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
                 }
             }
             catch
@@ -103,11 +105,13 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvPrintBreakDown.CurrentRow != null)
+                    {
                         _printBreakDownRepository.Edit((int)dgvPrintBreakDown.CurrentRow.Cells[0].Value, txtCode.Text, txtName.Text, txtColor.Text, txtSize.Text, txtQty.Text,
                             txtPercenBreakDown.Text, txtDescription.Text, txtDate.PersianDate.ToString());
-                    _printBreakDownRepository.SaveChanges();
-                    BindGrid();
-                    Messages.Success();
+                        _printBreakDownRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
                 }
             }
             catch

@@ -56,6 +56,7 @@ namespace Accounting.Forms
                 }
 
                 _projectRepository.Create(txtCode.Text, txtName.Text, txtCustomer.Text, txtDate.PersianDate.ToString(), txtQty.Text, txtBarcode.Text);
+                _projectRepository.SaveChanges();
                 BindGrid();
                 Messages.Success();
             }
@@ -72,10 +73,12 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvProject.CurrentRow != null)
+                    {
                         _projectRepository.Delete((int)dgvProject.CurrentRow.Cells[0].Value);
-
-                    BindGrid();
-                    Messages.Success();
+                        _projectRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
                 }
             }
             catch
@@ -97,10 +100,14 @@ namespace Accounting.Forms
                 if (Messages.Question() == DialogResult.OK)
                 {
                     if (dgvProject.CurrentRow != null)
-                        _projectRepository.Edit((int) dgvProject.CurrentRow.Cells[0].Value, txtCode.Text, txtName.Text,
+                    {
+                        _projectRepository.Edit((int)dgvProject.CurrentRow.Cells[0].Value, txtCode.Text, txtName.Text,
                             txtCustomer.Text, txtDate.PersianDate.ToString(), txtQty.Text, txtBarcode.Text);
-                    BindGrid();
-                    Messages.Success();
+                        _projectRepository.SaveChanges();
+                        BindGrid();
+                        Messages.Success();
+                    }
+
                 }
             }
             catch
@@ -128,7 +135,7 @@ namespace Accounting.Forms
             }
             catch
             {
-                // ignored
+                Messages.Failed();
             }
         }
 
@@ -149,7 +156,7 @@ namespace Accounting.Forms
             }
             catch
             {
-                // ignored
+                Messages.Failed();
             }
         }
     }

@@ -28,7 +28,7 @@ namespace Accounting.Forms
 
         private void buttonItem2_Click(object sender, EventArgs e)
         {
-            //new frmRemainingReport(new RemainingReportRepository()).Show();
+            new frmRemainingReport(new RemainingReportRepository()).Show();
         }
 
         private void buttonItem11_Click(object sender, EventArgs e)
@@ -43,12 +43,12 @@ namespace Accounting.Forms
 
         private void buttonItem4_Click(object sender, EventArgs e)
         {
-            //new frmProject(new ProjectRepository()).Show();
+            new frmProject(new ProjectRepository()).Show();
         }
 
         private void buttonItem8_Click(object sender, EventArgs e)
         {
-            //new frmSewingBreakDown(new SewingBreakDownRepository()).Show();
+            new frmSewingBreakDown(new SewingBreakDownRepository()).Show();
         }
 
         private void buttonItem7_Click(object sender, EventArgs e)
