@@ -8,7 +8,6 @@ F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\bin\Debug\PersianDate
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\bin\Debug\DevComponents.DotNetBar2.xml
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\bin\Debug\EntityFramework.xml
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\bin\Debug\EntityFramework.SqlServer.xml
-F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\obj\Debug\Accounting.csproj.AssemblyReference.cache
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\obj\Debug\Accounting.csproj.SuggestedBindingRedirects.cache
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\obj\Debug\Accounting.Forms.frmBarcode.resources
 F:\Projects\Portfolio\AccountingCode\Accounting\Accounting\obj\Debug\Accounting.Forms.frmMain.resources
